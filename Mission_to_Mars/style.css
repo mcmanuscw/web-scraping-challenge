@@ -3,27 +3,31 @@ body {
     margin: 8px;
 }
 
-.navbar {
+.header {
     background-color: antiquewhite;
 }
 
-
 /* Centering our h1 tag inside our header, giving it a little padding, removing its margin */
 .header h1 {
-    padding: 60px;
+    padding: 90px;
     margin: 0;
     color: #000;
     text-align: center;
   }
 
-
-/* Making our navbar li's inline-block elements this makes it so we can have multiple on the same line. Floats could have been used too */
-.navbar li a {
-    display: inline-block;
-    padding: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-    cursor: pointer;
+  h4 {
+    padding: 15px;
+    /* margin: 0; */
+    color: #000;
+    text-align: center;
     background: #5191fd;
-    border-radius: 3px;
-  
+    color: white;
+  }
+
+  h4 a {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    color: #000;
+    color: white;
+  }
