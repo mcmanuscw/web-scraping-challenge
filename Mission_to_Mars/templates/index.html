@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>M2M</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+
+        <!-- First Row -->
+        <div class="row">
+
+            <!-- First (and only column) -->
+            <div class="col-md-12">
+                <h1>Latest Mars News </h1>
+                <h4 class="media-heading">{{ mars.news_title }}</h4>
+                <p>{{ mars.news_paragraph }}</p>
+
+            </div>
+
+        </div>
+        <br>
+        <hr>
+
+        <!--Third Row-->
+        <div class="row">
+            <!--First of Two Columns-->
+            <div class="col-md-8">
+                <h1>Featured Mars Image</h1>
+                br
+                <img src="{{mars.featured_image | default('static/images/error.png', true) }}" class="img-responsive"
+                    alt="Responsive image" />
+                <br>
+            </div>
+            <!--Second of Two Columns-->
+            <div class="col-md-4">
+                <h5>Mars Facts</h5>
+                {{ mars.facts | safe }}
+
+            </div>
+        </div>
+
+        <!-- These will be the columns for the images -->
+        <!--These col-md-3 columns go half wide when on a small screen and full on extra small-->
+        <br>
+        <br>        
+        <div class="row" id="mars-hemispheres">
+            <div class="page-header">
+                <h2 class="text-center">Mars Hemispheres</h2>
+                
+            </div>
+            {% for hemisphere in mars.hemispheres %}
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
+                    <div class="caption">
+                        <h3>{{hemisphere.title}}</h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
