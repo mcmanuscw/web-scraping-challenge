@@ -5,6 +5,7 @@ body {
 
 .header {
     background-color: antiquewhite;
+    text-align: center;
 }
 
 /* Centering our h1 tag inside our header, giving it a little padding, removing its margin */
@@ -12,7 +13,7 @@ body {
     padding: 90px;
     margin: 0;
     color: #000;
-    text-align: center;
+    
   }
 
   h4 {
