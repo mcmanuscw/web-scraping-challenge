@@ -1,6 +1,8 @@
 Web Scrape Homework:
 
-This assignment was very challenging, and I was able to complete it with the help of a great tutor.
+This assignment was very challenging, and with tutoing was able to complete.
+
+Key learnigns around inspecting; finding and copying target site xpaths; app.py and function.py development/deployment; for loops; building skill with dictionaries and iteration.
 
 Please find with this submission the ipynb "mission to mars.ipynb" and images of the web app in the "Images" directory.
 
