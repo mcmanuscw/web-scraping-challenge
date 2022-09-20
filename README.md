@@ -1,12 +1,11 @@
-Web Scrape Homework; 
+Web Scrape Homework:
 
 This assignment was very challenging, and I was able to complete it with the help of a great tutor.
 
-Please find with this submission the ipynb "mission to mars.ipynb".
+Please find with this submission the ipynb "mission to mars.ipynb" and images of the web app in the "Images" directory.
 
-The images of the web app are in the "Images directory.
-
-
+Kind Thanks,
+Chuck
 
 
 
