@@ -9,7 +9,7 @@
     <title>M2M</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/static/style.css">
 
 </head>
 
@@ -42,7 +42,7 @@
             <!--First of Two Columns-->
             <div class="col-md-8">
                 <h1>Featured Mars Image</h1>
-                br
+                
                 <img src="{{mars.featured_image | default('static/images/error.png', true) }}" class="img-responsive"
                     alt="Responsive image" />
                 <br>
@@ -55,15 +55,25 @@
             </div>
         </div>
 
+        <div class="row">
+
+            <!-- 3rd (and only column) -->
+            <div class="col-md-12">
+                <br>
+                <h1>Mars Hemispheres</h1>
+                                
+            </div>
+
+        </div>
+        
+
+
+
         <!-- These will be the columns for the images -->
         <!--These col-md-3 columns go half wide when on a small screen and full on extra small-->
-        <br>
-        <br>        
+             
         <div class="row" id="mars-hemispheres">
-            <div class="page-header">
-                <h2 class="text-center">Mars Hemispheres</h2>
-                
-            </div>
+            
             {% for hemisphere in mars.hemispheres %}
             <div class="col-md-3">
                 <div class="thumbnail">

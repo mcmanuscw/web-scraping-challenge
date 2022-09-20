@@ -22,13 +22,13 @@ def scrape():
     # Set an empty dict for listings that we can save to Mongo
     listings = {}
 
-    #  URL to scrape
+    #  URL to scrape Mars News
     url = 'https://redplanetscience.com/'
     
     # Call visit on our 0 and pass in the URL we want to scrape   
     browser.visit(url)
 
-    # Let it sleep for 1 second
+    # Let it sleep for 5 seconds
     time.sleep(5)
 
     # Fetch title using find x path... 
@@ -37,6 +37,7 @@ def scrape():
     # Fetch teaser paragraph using find x path... 
     news_p=browser.find_by_xpath('//*[@id="news"]/div[1]/div/div[2]/div/div[3]').text
 
+    #  URL to scrape featured image
     url = 'https://spaceimages-mars.com'
     browser.visit(url)
     time.sleep(5)
@@ -44,22 +45,23 @@ def scrape():
 
     # Fetch featured image... 
     # Copied xpath for clickable image - /html/body/div[1]/div/a/button
-
     browser.find_by_xpath('/html/body/div[1]/div/a/button').click()
-
-    # xpath for  - /html/body/div[8]/div/div/div/div/img
+    
+    # xpath for  - /html/body/div[8]/div/div/div/div/img -->> right click on the image and inspect >> right click >> copy >> Copy xpath
 
     url_featured_image=browser.find_by_xpath('/html/body/div[8]/div/div/div/div/img')['src']
     
-
+    #  URL to scrape Mars Facts
     url = 'https://galaxyfacts-mars.com/'
     browser.visit(url)
     time.sleep(5)
 
+    # Pandas to read the table and write the table to text html 
     table_df=pd.read_html(url)[0]
     table_df.columns=['Description', 'Mars', 'Earth']   
     table_df.set_index('Description', inplace=True)
 
+    
     table_html=table_df.to_html()
     
 

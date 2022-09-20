@@ -16,26 +16,33 @@ body {
     
   }
 
-  h4 {
+  /* h4 {
     padding: 15px;
-    /* margin: 0; */
+    margin: 0;
     color: #000;
     text-align: center;
     background: #5191fd;
     color: white;
-  }
+  } */
 
-  h4 a {
+  /* h4 a {
     text-align: center;
     padding: 15px;
     margin: 0;
     color: #000;
     color: white;
-  }
+  } */
 
-  img {
+  /* img {
     padding: 15px;
     width: 60px;
     height: 60px;
     margin: 2cm;
+  } */
+  
+  .thumbnail img {
+    padding: 5px;
+    width: 45%;
+    height: 45%;
+    margin: 5px;
   }
